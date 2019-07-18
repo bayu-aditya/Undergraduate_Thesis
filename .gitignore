@@ -1,3 +1,7 @@
 .vscode/
+.ipynb_checkpoints/
 example_qe2wan/
 First_Principle/
+
+Tight_Binding/__pycache__
+Tight_Binding/tight_binding/__pycache__

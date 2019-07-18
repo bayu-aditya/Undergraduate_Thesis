@@ -12,7 +12,7 @@ class extract_parameter():
     def __init__(self, hr_files):
         num_init_row = self._check_initial_row(hr_files)
         self.data = pd.read_fwf(
-            files_hr, 
+            hr_files, 
             names=["X", "Y", "Z", "A", "B", "Re", "Im"], 
             skiprows=num_init_row
             )

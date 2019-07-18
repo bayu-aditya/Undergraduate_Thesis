@@ -1,2 +1,2 @@
 # author : Bayu Aditya
-from .extract_parameter import extract_parameter
+from .tight_binding.extract_parameter import extract_parameter
