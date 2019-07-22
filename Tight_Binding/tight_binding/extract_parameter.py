@@ -5,6 +5,16 @@ import pandas as pd
 
 class input_data():
     def __init__(self, parameter_TB, atomic_position, orbital_index, a, b, c):
+        """Input data parameter Tight Binding dari Wannier90, posisi atom, index orbital, dan ukuran lattice parameter.
+        
+        Arguments:
+            parameter_TB {str} -- nama dan lokasi file hr
+            atomic_position {str} -- lokasi file atomic_position
+            orbital_index {str} -- lokasi file orbital_index
+            a {numpy.float64} -- lattice parameter arah X
+            b {numpy.float64} -- lattice parameter arah Y
+            c {numpy.float64} -- lattice parameter arah Z
+        """
         # Import parameter_TB from wannier90
         self.parameter = extract_parameter(parameter_TB).get_data()
         # menyatukan dataframe atomic_position dan orbital_index
@@ -30,6 +40,17 @@ class input_data():
         return merge_df
 
     def vec_lattice(self):
+        """Dataframe parameter tight binding beserta vector lattice untuk hamiltonian tight binding.
+
+        | X   | Y   | Z   | A   | B   | Re  | Im  | Rx  | Ry  | Rz  |
+        +-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+
+        | 0   | 0   | 0   | 1   | 1   | 0.5 | 0.5 | 0.4 | 0.3 | 0.2 | 
+        | 0   | 0   | 0   | 1   | 1   | 0.5 | 0.5 | 0.4 | 0.3 | 0.2 |
+        | :   | :   | :   | :   | :   | :   | :   | :   | :   | :   |
+        
+        Returns:
+            pandas.DataFrame -- parameter tight binding dan vector lattice
+        """
         # Mendapatkan vektor lattice
         merge_df = self.merge()
         merge_df["Rx"] = merge_df["Bx"]-merge_df["Ax"]
