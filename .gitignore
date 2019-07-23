@@ -2,7 +2,6 @@
 .ipynb_checkpoints/
 example_qe2wan/
 First_Principle/
+VO2_tight-binding*
 
-Tight_Binding/__pycache__
-Tight_Binding/tight_binding/__pycache__
-Tight_Binding/DOS/__pycache__
+*__pycache__/
