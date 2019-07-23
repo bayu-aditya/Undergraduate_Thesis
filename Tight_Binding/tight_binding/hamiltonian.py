@@ -1,9 +1,10 @@
 # author : Bayu Aditya
 import numpy as np
 import pandas as pd
+from tqdm import tqdm
 
 def hamiltonian(k, input_dataframe):
-    """Hamiltonian Tight Binding berdasarkan vektor K.
+    """Hamiltonian Tight Binding berdasarkan single K vector.
     
     Arguments:
         k {numpy.array} -- vektor k dengan ukuran (3,)
@@ -32,3 +33,11 @@ def hamiltonian(k, input_dataframe):
                 sum_H += H_idx        
             hamiltonian[i,j] = sum_H
     return hamiltonian
+
+def multiple_hamiltonian(k_path_grid, input_hamiltonian, hamiltonian_func):
+    multiple_hamiltonian = []
+    for i in tqdm(range(len(k_path_grid))):
+        ham = hamiltonian_func(k_path_grid[i], input_hamiltonian)
+        multiple_hamiltonian.append(ham)
+    multiple_hamiltonian = np.array(multiple_hamiltonian, dtype=np.complex128)
+    return multiple_hamiltonian

@@ -15,6 +15,9 @@ class input_data():
             b {numpy.float64} -- lattice parameter arah Y
             c {numpy.float64} -- lattice parameter arah Z
         """
+        self.a = a
+        self.b = b
+        self.c = c
         # Import parameter_TB from wannier90
         self.parameter = extract_parameter(parameter_TB).get_data()
         # menyatukan dataframe atomic_position dan orbital_index
@@ -37,6 +40,10 @@ class input_data():
         # merge parameter and orbital
         merge_df = self.parameter.merge(self.orbitalA)
         merge_df = merge_df.merge(self.orbitalB)
+        # mengalikan orbital A dengan nilai X Y Z
+        merge_df["Bx"] = merge_df["Bx"] + self.a*merge_df["X"]
+        merge_df["By"] = merge_df["By"] + self.b*merge_df["Y"]
+        merge_df["Bz"] = merge_df["Bz"] + self.c*merge_df["Z"]
         return merge_df
 
     def vec_lattice(self):

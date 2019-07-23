@@ -4,6 +4,9 @@ from numpy.linalg import inv
 import matplotlib.pyplot as plt
 from tqdm import tqdm
 
+from .hamiltonian import hamiltonian
+from .hamiltonian import multiple_hamiltonian
+
 class density_of_states():
     """
     Rapat keadaan pada kristal Simple Cubic. Menggunakan aproksimasi tight binding.
@@ -11,11 +14,13 @@ class density_of_states():
     Args:
         n (int): grid k-point sebesar (n x n x n)
     """
-    def __init__(self, n):
+    def __init__(self, n, input_dataframe):
         self.n = n
         self.a = 1          # Angstrom
         k_grid = self._create_grid()
-        self.hamiltonian = self._hamiltonian(k_grid)
+
+        self.hamiltonian = multiple_hamiltonian(k_grid, input_dataframe, hamiltonian)
+        #self.hamiltonian = self._hamiltonian(k_grid)
     
 
     def get_dos(self, start, stop, n=100):
@@ -143,7 +148,3 @@ class density_of_states():
         green = self._green_func(frequency=frequency)
         dos = -(1.0/np.pi)*green.imag
         return dos
-
-# cls_dos = density_of_states(50)
-# cls_dos.get_dos(0, 2)
-# print("Selesai")
