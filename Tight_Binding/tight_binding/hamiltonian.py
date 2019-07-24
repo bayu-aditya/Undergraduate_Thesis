@@ -2,6 +2,8 @@
 import numpy as np
 import pandas as pd
 from tqdm import tqdm
+import multiprocessing
+from functools import partial
 
 def hamiltonian(k, input_dataframe):
     """Hamiltonian Tight Binding berdasarkan single K vector.
@@ -34,10 +36,18 @@ def hamiltonian(k, input_dataframe):
             hamiltonian[i,j] = sum_H
     return hamiltonian
 
+# def multiple_hamiltonian(k_path_grid, input_hamiltonian, hamiltonian_func):
+#     multiple_hamiltonian = []
+#     for i in tqdm(range(len(k_path_grid))):
+#         ham = hamiltonian_func(k_path_grid[i], input_hamiltonian)
+#         multiple_hamiltonian.append(ham)
+#     multiple_hamiltonian = np.array(multiple_hamiltonian, dtype=np.complex128)
+#     return multiple_hamiltonian
+
 def multiple_hamiltonian(k_path_grid, input_hamiltonian, hamiltonian_func):
-    multiple_hamiltonian = []
-    for i in tqdm(range(len(k_path_grid))):
-        ham = hamiltonian_func(k_path_grid[i], input_hamiltonian)
-        multiple_hamiltonian.append(ham)
+    num_cpu = multiprocessing.cpu_count()
+    pool = multiprocessing.Pool(processes=num_cpu)
+    hamiltonian = partial(hamiltonian_func, input_dataframe=input_hamiltonian)
+    multiple_hamiltonian = pool.map(hamiltonian, k_path_grid)
     multiple_hamiltonian = np.array(multiple_hamiltonian, dtype=np.complex128)
     return multiple_hamiltonian

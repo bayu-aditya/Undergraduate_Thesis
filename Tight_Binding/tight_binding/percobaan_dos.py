@@ -7,6 +7,8 @@ from tqdm import tqdm
 from .hamiltonian import hamiltonian
 from .hamiltonian import multiple_hamiltonian
 
+import multiprocessing
+
 class density_of_states():
     """
     Rapat keadaan pada kristal Simple Cubic. Menggunakan aproksimasi tight binding.
@@ -32,10 +34,17 @@ class density_of_states():
             - stop (float64): frekuensi akhir
             - n (int): banyaknya titik frekuensi (default=100)
         """
+        print("calculate DOS")
         frequency = np.linspace(start, stop, n)
-        dos = np.zeros_like(frequency)
-        for idx in tqdm(range(len(frequency))):
-            dos[idx] = self._dos(frequency[idx])
+        # dos = np.zeros_like(frequency)
+        # for idx in tqdm(range(len(frequency))):
+        #     dos[idx] = self._dos(frequency[idx])
+
+        # Proses menggunakan setengah CPU count karena setiap fungsi dos sudah menggunakan 2 CPU
+        num_cpu = multiprocessing.cpu_count()
+        pool = multiprocessing.Pool(processes=int(num_cpu/2))
+        dos = pool.map(self._dos, frequency)
+
         plt.plot(frequency, dos)
         plt.show()       
 
