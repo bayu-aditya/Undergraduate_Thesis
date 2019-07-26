@@ -31,7 +31,7 @@ def hamiltonian(k, input_dataframe):
                 e = df.Re.iloc[idx]
                 t = df.Im.iloc[idx]
                 R = [df.Rx.iloc[idx], df.Ry.iloc[idx], df.Rz.iloc[idx]]
-                H_idx = e + t*np.exp(1j*np.dot(k,R))
+                H_idx = (e + t)*np.exp(1j*np.dot(k,R))
                 sum_H += H_idx        
             hamiltonian[i,j] = sum_H
     return hamiltonian
