@@ -18,11 +18,7 @@ def hamiltonian(k, input_dataframe):
     mat = input_dataframe.to_numpy()
 
     hamiltonian = np.zeros(
-<<<<<<< HEAD
         shape=(len(np.unique(mat[:,3])), len(np.unique(mat[:,4]))),dtype=np.complex128)
-=======
-        shape=(len(np.unique(mat[:,3])), len(np.unique(mat[:,3]))),dtype=np.complex128)
->>>>>>> 211f3ce307dd94fff2225195bbb64324fa381a83
 
     for i, A in enumerate(np.unique(mat[:,3])):
         for j, B in enumerate(np.unique(mat[:,4])):
