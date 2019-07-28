@@ -25,14 +25,11 @@ def hamiltonian(k, input_dataframe):
             filter_A = a.A == A
             filter_B = a.B == B
             df = a[filter_A & filter_B]
-            
-            sum_H = 0+0j
-            for idx in range(len(df)):
-                e = df.Re.iloc[idx]
-                t = df.Im.iloc[idx]
-                R = [df.Rx.iloc[idx], df.Ry.iloc[idx], df.Rz.iloc[idx]]
-                H_idx = (e + t)*np.exp(1j*np.dot(k,R))
-                sum_H += H_idx        
+
+            R = np.array([df.Rx, df.Ry, df.Rz])
+            sum_H = (df.Re + df.Im*1j)*np.exp(-1j*np.dot(k,R))
+            sum_H = sum_H.sum()
+
             hamiltonian[i,j] = sum_H
     return hamiltonian
 
