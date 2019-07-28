@@ -15,21 +15,19 @@ def hamiltonian(k, input_dataframe):
     Returns:
         numpy.array -- Matriks Hamiltonian tight binding dengan ukuran banyaknya jenis orbital.
     """
-    a = input_dataframe
+    mat = input_dataframe.to_numpy()
 
-    hamiltonian = np.zeros(shape=(len(a.A.unique()), len(a.B.unique())),
-                        dtype=np.complex128)
+    hamiltonian = np.zeros(
+        shape=(len(np.unique(mat[:,3])), len(np.unique(mat[:,3]))),dtype=np.complex128)
 
-    for i, A in enumerate(a.A.unique()):
-        for j, B in enumerate(a.B.unique()):
-            filter_A = a.A == A
-            filter_B = a.B == B
-            df = a[filter_A & filter_B]
-
-            R = np.array([df.Rx, df.Ry, df.Rz])
-            sum_H = (df.Re + df.Im*1j)*np.exp(-1j*np.dot(k,R))
+    for i, A in enumerate(np.unique(mat[:,3])):
+        for j, B in enumerate(np.unique(mat[:,4])):
+            df = mat[(mat[:,3]==A) & (mat[:,4]==B)]
+            
+            R = np.array([df[:,7], df[:,8], df[:,9]])
+            sum_H = (df[:,5] + df[:,6]*1j)*np.exp(-1j*np.dot(k,R))
             sum_H = sum_H.sum()
-
+            
             hamiltonian[i,j] = sum_H
     return hamiltonian
 
