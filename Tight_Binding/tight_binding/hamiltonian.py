@@ -15,6 +15,7 @@ def hamiltonian(k, input_dataframe):
     Returns:
         numpy.array -- Matriks Hamiltonian tight binding dengan ukuran banyaknya jenis orbital.
     """
+    # Be careful, more number of processes, more used memory !!!
     mat = input_dataframe.to_numpy()
 
     hamiltonian = np.zeros(
@@ -31,17 +32,14 @@ def hamiltonian(k, input_dataframe):
             hamiltonian[i,j] = sum_H
     return hamiltonian
 
-# def multiple_hamiltonian(k_path_grid, input_hamiltonian, hamiltonian_func):
-#     multiple_hamiltonian = []
-#     for i in tqdm(range(len(k_path_grid))):
-#         ham = hamiltonian_func(k_path_grid[i], input_hamiltonian)
-#         multiple_hamiltonian.append(ham)
-#     multiple_hamiltonian = np.array(multiple_hamiltonian, dtype=np.complex128)
-#     return multiple_hamiltonian
-
-def multiple_hamiltonian(k_path_grid, input_hamiltonian, hamiltonian_func):
-    num_cpu = multiprocessing.cpu_count()
-    pool = multiprocessing.Pool(processes=num_cpu)
+def multiple_hamiltonian(k_path_grid, input_hamiltonian, hamiltonian_func, num_process='default'):
+    # More number of processes, more used memory !!!
+    if (num_process == "default"):
+        num_procs = multiprocessing.cpu_count()
+    else:
+        num_procs = num_process
+    print("Using ", num_procs, "Processes")
+    pool = multiprocessing.Pool(processes=num_procs)
     hamiltonian = partial(hamiltonian_func, input_dataframe=input_hamiltonian)
     multiple_hamiltonian = pool.map(hamiltonian, k_path_grid)
     multiple_hamiltonian = np.array(multiple_hamiltonian, dtype=np.complex128)
