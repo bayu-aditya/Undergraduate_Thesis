@@ -6,6 +6,8 @@ import multiprocessing
 from functools import partial
 import time
 
+from .hamiltonian_c.hamiltonian import hamiltonian_cython
+
 def hamiltonian(k, input_dataframe):
     """Hamiltonian Tight Binding berdasarkan single K vector.
     
@@ -34,6 +36,24 @@ def hamiltonian(k, input_dataframe):
             hamiltonian[i,j] = sum_H
     print("Hamiltonian 1 K-point berhasil digenerate.", time.time()-start, "Detik")
     return hamiltonian
+
+
+def hamiltonian_v2(k, input_dataframe):
+    mat = input_dataframe.to_numpy()
+
+    ham = np.zeros(shape=(len(np.unique(mat[:,3])), len(np.unique(mat[:,4]))),dtype=np.complex128)
+
+    for idx in range(len(mat)):
+        i, j = np.int(mat[idx,3]-1), np.int(mat[idx,4]-1)
+        R = np.array([mat[idx,7], mat[idx,8], mat[idx,9]])
+        ham[i,j] += (mat[idx,5] + mat[idx,6]*1j)*np.exp(-1j*np.dot(k,R))
+    return ham
+
+
+def hamiltonian_v3(k, input_dataframe):
+    mat = input_dataframe.to_numpy()
+    return hamiltonian_cython(k, mat)
+
 
 def multiple_hamiltonian(k_path_grid, input_hamiltonian, hamiltonian_func, num_process='all'):
     # More number of processes, more used memory !!!
