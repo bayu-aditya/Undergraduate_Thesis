@@ -4,6 +4,7 @@ import pandas as pd
 from tqdm import tqdm
 import multiprocessing
 from functools import partial
+import time
 
 def hamiltonian(k, input_dataframe):
     """Hamiltonian Tight Binding berdasarkan single K vector.
@@ -16,6 +17,7 @@ def hamiltonian(k, input_dataframe):
         numpy.array -- Matriks Hamiltonian tight binding dengan ukuran banyaknya jenis orbital.
     """
     # Be careful, more number of processes, more used memory !!!
+    start = time.time()
     mat = input_dataframe.to_numpy()
 
     hamiltonian = np.zeros(
@@ -30,11 +32,12 @@ def hamiltonian(k, input_dataframe):
             sum_H = sum_H.sum()
             
             hamiltonian[i,j] = sum_H
+    print("Hamiltonian 1 K-point berhasil digenerate.", time.time()-start, "Detik")
     return hamiltonian
 
-def multiple_hamiltonian(k_path_grid, input_hamiltonian, hamiltonian_func, num_process='default'):
+def multiple_hamiltonian(k_path_grid, input_hamiltonian, hamiltonian_func, num_process='all'):
     # More number of processes, more used memory !!!
-    if (num_process == "default"):
+    if (num_process == "all"):
         num_procs = multiprocessing.cpu_count()
     else:
         num_procs = num_process
