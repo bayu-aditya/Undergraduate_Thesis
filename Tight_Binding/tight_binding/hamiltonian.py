@@ -6,7 +6,7 @@ import multiprocessing
 from functools import partial
 import time
 
-from .hamiltonian_c.hamiltonian import hamiltonian_cython
+from Tight_Binding.tight_binding.hamiltonian_c.hamiltonian import hamiltonian_cython
 
 def hamiltonian(k, input_dataframe):
     """Hamiltonian Tight Binding berdasarkan single K vector.

@@ -4,7 +4,7 @@ import numpy as np
 import pandas as pd
 
 class input_data():
-    def __init__(self, parameter_TB, atomic_position, orbital_index, a, b, c):
+    def __init__(self, parameter_TB, atomic_position, orbital_index, a, b, c, max_X=100, max_Y=100, max_Z=100):
         """Input data parameter Tight Binding dari Wannier90, posisi atom, index orbital, dan ukuran lattice parameter.
         
         Arguments:
@@ -20,9 +20,21 @@ class input_data():
         self.c = c
         # Import parameter_TB from wannier90
         self.parameter = extract_parameter(parameter_TB).get_data()
+        # Index orbital Data
+        self.orbital = merge_index_orbital(atomic_position, orbital_index)
         # menyatukan dataframe atomic_position dan orbital_index
         self.orbitalA, self.orbitalB = _concatenate_atom_orbital(
             atomic_position, orbital_index, a, b, c)
+        # untuk interface ke class lain : DOS, Band Structure sebagai input hamiltonian
+        vec_lat = self.vec_lattice()
+        filter_X = abs(vec_lat.X) <= max_X
+        filter_Y = abs(vec_lat.Y) <= max_Y
+        filter_Z = abs(vec_lat.Z) <= max_Z
+        self.input_hamiltonian = vec_lat[filter_X & filter_Y & filter_Z]
+        print(
+            "[INFO] input data, max_X : ", self.input_hamiltonian.X.unique(),
+            ", max_Y : ", self.input_hamiltonian.Y.unique(),
+            ", max_Z : ", self.input_hamiltonian.Z.unique())
 
     def get_parameter_TB(self):
         return self.parameter
@@ -173,3 +185,10 @@ def _concatenate_atom_orbital(atomic_position, orbital_index, a, b, c):
     orbitalA.columns = ["A", "Ax", "Ay", "Az"]
     orbitalB.columns = ["B", "Bx", "By", "Bz"]
     return orbitalA, orbitalB
+
+def merge_index_orbital(atomic_position, orbital_index):
+    # read dataframe
+    atom = pd.read_csv(atomic_position)     # position atoms
+    orbital = pd.read_csv(orbital_index)    # orbital indexs
+    # merge dataframe
+    return orbital.merge(atom)
