@@ -7,3 +7,6 @@ VO2_tight-binding*
 *__pycache__/
 *hr_files/
 *hamiltonian/
+
+*.o
+*.so
