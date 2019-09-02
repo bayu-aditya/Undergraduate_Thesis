@@ -3,6 +3,8 @@
 example_qe2wan/
 First_Principle/
 VO2_tight-binding*
+Report/
+mpi4py/
 
 *__pycache__/
 *hr_files/
