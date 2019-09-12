@@ -3,7 +3,7 @@ import numpy as np
 from numpy.linalg import inv
 import matplotlib.pyplot as plt
 from tqdm import tqdm
-# import tensorflow as tf
+import tensorflow as tf
 import sys
 
 import time
@@ -125,6 +125,7 @@ class dos_orthorombic:
                 print(time.time() - begin, "Sec. Frequency", i+1, "of", len(frequency))
         
         np.savez("DOS_array.npz", frequency, dos, pdos)
+        print("File has been saved in : DOS_array.npz")
 
 
     def reduce_dos_band(self, low, high, limit, vline, filename_dos, filename_band):
