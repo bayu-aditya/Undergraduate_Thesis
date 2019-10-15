@@ -1,0 +1,186 @@
+\documentclass{aip-cp}
+
+\usepackage[numbers]{natbib}
+\usepackage{rotating}
+
+% Document starts
+\begin{document}
+
+% Title portion
+\title{The Title Goes Here with Each Initial Letter Capitalized}
+
+\author[aff1]{Author's Name\corref{cor1}}
+\eaddress[url]{http://www.aip.org}
+\author[aff2,aff3]{Author's Name}
+\eaddress{anotherauthor@thisaddress.yyy}
+
+\affil[aff1]{Replace this text with an author's affiliation (use complete addresses). Note the use of superscript ``a)'' to indicate the author's e-mail address below. Use b), c), etc. to indicate e-mail addresses for more than 1 author.}
+\affil[aff2]{Additional affiliations should be indicated by superscript numbers 2, 3, etc. as shown above.}
+\affil[aff3]{You would list an author's second affiliation here.}
+\corresp[cor1]{Corresponding author: your@emailaddress.xxx}
+
+\maketitle
+
+\begin{abstract}
+The AIP Proceedings article template has many predefined paragraph styles for you to use/apply as you write your paper. To format your abstract, use the \LaTeX template style: {\itshape Abstract.} Each paper must include an abstract. Begin the abstract with the word ``Abstract'' followed by a period in bold font, and then continue with a normal 9 point font.
+\end{abstract}
+
+% Head 1
+\section{INTRODUCTION}
+Do not abbreviate Figure, Equation, etc.; display items are always singular, i.e., Figure 1 and 2. Equations are always singular, i.e., Equation 1 and 2, and should be inserted using the Equation Editor, not as graphics, in the main text.  Display items and captions should be inserted after the reference section. Please do not use footnotes in the text, additional information can be added to the reference list.
+
+This is the paragraph spacing that occurs when you use the [ENTER] key.
+
+
+\section{FIRST-ORDER HEADING}
+This is an example of dummy text. This is an example of dummy text. This is an example of dummy text.
+This is an example of dummy text. This is an example of dummy text. This is an example of dummy text.
+
+This is the paragraph spacing that occurs when you use the [ENTER] key.
+
+% Head 2
+\subsection{Second-Order Heading}
+This is an example of dummy text. This is an example of dummy text. This is an example of dummy text.
+This is an example of dummy text. This is an example of dummy text. This is an example of dummy text.
+This is an example of dummy text. This is an example of dummy text. This is an example of dummy text.
+This is an example of dummy text. This is an example of dummy text. This is an example of dummy text.
+
+
+% Head 3
+\subsubsection{Third-Order Heading}
+Physical data should be quoted with decimal points and negative exponents (e.g., 25.8 J K$^{-1}$ mol$^{-1}$), and arranged as follows where possible: mp/bp 20$^{\circ}$C; [$\alpha$]D20 $=$ $-$13.5 ($c = 0.2$, acetone) (please also give units for [$\alpha$] and $c$, usually deg cm$^3$ g$^{-1}$ dm$^{-1}$ and g cm$^{-3}$, respectively); 1H NMR (400 MHz, DMSO-$d_6$, $\delta$): 7.15 (s, 2H, Ar H), 1.3 (q, $J = 8$ Hz, 2H; CH$_2$), 0.9 (t, $J = 8$ Hz, 3H; CH$_3$); $^{13}$C NMR (100 MHz, CDCl$_3$, δ): 175.4 (C$=$O), 156.5 (C4); IR (KBr): $\nu = 2972$ (w), 2907 (w), \ldots, 1026 (s; $\nu_{\rm as}$(SiOSi)), 971 ($\nu_{\rm s}$), $\ldots$, 666 (w; $\nu_{\rm s}$(SiOSi)), \ldots, 439 (m), 401 cm$^{-1}$ (m); UV-vis ($n$-hexane): $\lambda_{\max}$ ($\varepsilon$) $=$ 320 (5000), 270 nm (12000); EIMS $m/z$ (\%): 108 (20) [M$^+$], 107 (60) [M$^+$ $-$ H], 91 (100) [C$_7$H$_7^+$]; HRMS (ESI) $m/z$: [M $+$ H]$^+$ calcd for C$_{21}$H$_{38}$N$_{4}$O$_{6}$S, 475.2591; found, 475.2593. Anal. calcd for C$_{45}$H$_{28}$N$_{4}$O$_{7}$: C 62.47, H 3.41, N 6.78; found: C 62.27, H 3.46, N 6.80.
+
+% enumerate
+\noindent Numbered lists may also be included and should look like this:
+
+\begin{enumerate}
+\item This is an example of numbered listing.
+\item This is an example of numbered listing. This is an example of numbered listing.
+\item This is an example of numbered listing.
+\item This is an example of numbered listing. This is an example of numbered listing.
+\item This is an example of numbered listing.
+\item This is an example of numbered listing. This is an example of numbered listing.
+\item This is an example of numbered listing.
+\end{enumerate}
+
+\noindent Bulleted lists may be included and should look like this:
+% itemize
+
+\begin{itemize}
+\item This is an example of bulleted listing.
+\item This is an example of bulleted listing. This is an example of bulleted listing.
+\item This is an example of bulleted listing.
+\item This is an example of bulleted listing. This is an example of bulleted listing.
+\item This is an example of bulleted listing.
+\end{itemize}
+
+\noindent This is an example of single line numbered eqation.
+\begin{equation}
+\frac{d[F_1]}{d\omega_2} = SAm_2\cos\omega,\frac{d[F_1]}{d\omega_3}= SAm_2\cos\omega
+\end{equation}
+
+This is an example of multiline numbered equation. For more on equations, please refer to the guide.
+% Numbered multiple equation
+\begin{eqnarray}
+p_{t_{10,1}}&=&\left(\frac{N_{cu}^2}{ N_c ^2}\right)\left(\frac{N_{ar}^2}{N_a^2}\right)\left(\frac{N_{ar}-1}{N_{ar}}\right)\\
+p_{t_{10,2}}&=&\left(\frac{N_{cu}^2}{ N_c ^2}\right)\left(\frac{N_{ar}}{N_a^2}\right)
+\end{eqnarray}
+% Unnumbered equation
+%% \begin{eqnarray*}
+%% {\rm ((Multi\ Equation\ Unnumbered))}\\
+%% {\rm ((Multi\ Equation\ Unnumbered))}\\
+%% {\rm ((Multi\ Equation\ Unnumbered))}
+%% \end{eqnarray*}
+%% this is an example of dummy text.
+% Unnumbered equation
+%% \[
+%% {\rm ((Single\ Equation\ Unnumbered))}
+%% \]
+%% this is an example of dummy text.
+
+\section{OTHER SPECIFICATIONS (FIRST LEVEL HEADING)}
+Figures, tables, and equations must be inserted in the text and may not be grouped at the end of the paper. Important: A miscount of figures, tables, or equations may result from revisions. Please double check the numbering of these elements before you submit your paper to your proceedings editor.\footnote{This is an example of footnote}
+
+\subsection{Figures (Second Level Heading)}
+If you need to arrange a number of figures, a good tip is to place them in a table, which gives you additional control of the layout. Leave a line space between your figure and any text above it, like this one:
+
+
+% Figure
+\begin{figure}[b]
+  \centerline{\includegraphics[width=400pt]{art/fig_2}}
+  \caption{To format a figure caption use the \LaTeX template style: Figure Caption. The text ``FIGURE 1,'' which labels the caption, should be bold and in upper case. If figures have more than one part, each part should be labeled (a), (b), etc. Using a table, as in the above example, helps you control the layout}
+\end{figure}
+
+\begin{sidewaysfigure}
+  \centerline{\includegraphics[width=500pt]{art/fig_2}}
+  \caption{To format a figure caption use the \LaTeX template style: Figure Caption. The text ``FIGURE 1,'' which labels the caption, should be bold and in upper case. If figures have more than one part, each part should be labeled (a), (b), etc. Using a table, as in the above example, helps you control the layout}
+\end{sidewaysfigure}
+
+
+Cite all figures in the text consecutively. The word ``Figure'' should be spelled out if it is the first word of the sentence and abbreviated as ``Fig.'' elsewhere in the text. Place the figures as close as possible to their first mention in the text at the top or bottom of the page with the figure caption positioned below, all centered. Figures must be inserted in the text and may not follow the Reference section. Set figure captions in 9 point size, Times Roman font. Type the word ``FIGURE 1.'' in bold uppercase, followed by a period.
+
+Authors are welcome to use color figures within their article. For online publication, there are no costs added for color figures. However, for printed proceedings (if requested by your conference organizer), there is an additional cost. Please consult directly with your conference organizer. If your conference organizer has asked AIP Publishing to produce printed copies (many ask AIP Publishing for online-only publication), then all figures will be printed in black-and-white unless you make specific arrangements with your organizer(s) to include color figures in your article and pay to them the associated fee(s) they request. We advise that many color figures can be printed in black-and-white with no loss of information; however, some figures do lose information when reproduced in black-and-white. Check your figure legends carefully and, if your figures are to be printed in black-and-white, remove from your text/descriptions any references to color.
+
+
+\subsection{Tables (Second Level Heading)}
+Due to the wide range and complexity of tables, we simply offer an example for guidance. Please follow the style for Table \ref{tab:a} (and figure) captions.
+
+% Table
+\begin{table}
+\caption{To format a table caption, use the \LaTeX template style: Table Caption. The text ``{\bf TABLE 1,}'' which labels the caption, should be bold and all letters capitalized. Center this text above the Table. Tables should have top and bottom rules, and a rule separating the column heads from the rest of the table only.}
+\label{tab:a}
+\tabcolsep7pt\begin{tabular}{lcccc}
+\hline
+  & \tch{1}{c}{b}{Single\\ outlet}  & \tch{1}{c}{b}{Small\\ multiple\tabnoteref{t1n1}}  & \tch{1}{c}{b}{Large\\ multiple}  & \tch{1}{c}{b}{Total}   \\
+\hline
+1982 & 98 & 129 & 620    & 847\\
+1987 & 138 & 176 & 1000  & 1314\\
+1991 & 173 & 248 & 1230  & 1651\\
+1998 & 200 & 300 & 1500\tabnoteref{t1n2}  & 2000\\
+\hline
+\end{tabular}
+\tablenote[t1n1]{This is an example of first tablenote entry This is an example of first tablenote entry}
+\tablenote[t1n2]{This is an example of second tablenote entry}
+\end{table}
+
+\subsection{Font Embedding (Second Level Heading)}
+As the author and creator of your article PDF, you have the most intimate knowledge of exactly what the PDF should display. We ask all authors to carefully check their article PDF prior to submission. Perform visual inspections to detect subtle font errors and ensure that all fonts are embedded. With the wide range of tools and software that authors use to create PDFs, and the number of devices and platforms that readers use to view/print them, font embedding by authors is not only ``nice-to-have''; it is essential. 
+
+\subsubsection{Why Should I Care About Font Embedding? (Third Level Heading)}
+Embedding fonts into your PDF file is critically important for two reasons:
+\begin{itemize}
+\item Commercial printing companies are unable to print PDFs without the correct fonts embedded.
+\item To ensure that your online article PDF file displays and prints correctly for everyone who wants to read your work.
+\end{itemize}
+
+Readers of scientific articles use an ever-increasing range of devices and applications to access, view, and print PDFs  from smart phones and tablets to desktop computers running any one of a number of operating systems. To ensure that readers of  your article can display and print it correctly, it is important for your article's PDF file to be truly portable: Your PDF file needs to be fully ``self-contained.''\vfill\pagebreak
+
+\section{FINAL KEY POINTS TO CONSIDER (FIRST LEVEL HEADING)}
+Here are the main points you need to follow (the AIP author template packages contain comprehensive guidance):
+
+\begin{itemize}
+\item Write and prepare your article using the AIP template.
+\item Create a PDF file of your paper (making sure to embed all fonts).
+\item Send the following items to your conference organizer:
+\begin{itemize}
+\item PDF file of your paper
+\item Signed Copyright Transfer Agreement
+\item (If it applies) Copies of any permissions to re-use copyrighted materials in your article (e.g., figures from books/journals)
+\end{itemize}
+\end{itemize}
+
+
+
+% Sections that will go in second font
+
+% Acknowledgement
+\section{ACKNOWLEDGMENTS}
+The reference section will follow the ``Acknowledgment'' section.  References should be numbered using Arabic numerals followed by a period (.) as shown below, and should follow the format in the below examples.
+
+% References
+
+\nocite{*}
+\bibliographystyle{aipnum-cp}%
+\bibliography{sample}%
+
+\end{document}

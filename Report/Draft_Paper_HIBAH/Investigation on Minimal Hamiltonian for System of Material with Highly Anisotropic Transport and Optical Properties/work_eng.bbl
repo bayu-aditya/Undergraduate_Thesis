@@ -1,0 +1,65 @@
+\begin{thebibliography}{10}
+
+\bibitem{andrivo}
+A.~Rusydi et~al.
+\newblock Near-100\% optically controlled switching in quasi-one-dimensional
+  metallic oxides.
+\newblock (Submitted).
+
+\bibitem{LICHTENBERG2001}
+F.~Lichtenberg et~al.
+\newblock Synthesis of perovskite-related layered anbno3n+2 = abox type
+  niobates and titanates and study of their structural, electric and magnetic
+  properties.
+\newblock {\em Progress in Solid State Chemistry}, 29(1):1 -- 70, 2001.
+
+\bibitem{LICHTENBERG2008}
+F.~Lichtenberg et~al.
+\newblock Synthesis, structural, magnetic and transport properties of layered
+  perovskite-related titanates, niobates and tantalates of the type anbno3n+2,
+  a′ak−1bko3k+1 and ambm−1o3m.
+\newblock {\em Progress in Solid State Chemistry}, 36(4):253 -- 387, 2008.
+
+\bibitem{chen}
+C.~Chen et~al.
+\newblock Atomic and electronic structure of the srnbo3/srnbo3.4 interface.
+\newblock {\em Applied Physics Letters}, 105(22):221602, 2014.
+
+\bibitem{Wan2017}
+D.~Y.~Wan et~al.
+\newblock Electron transport and visible light absorption in a plasmonic
+  photocatalyst based on strontium niobate.
+\newblock {\em Nature Communications}, 8:15070 EP --, Apr 2017.
+\newblock Article.
+
+\bibitem{persson}
+K.~Persson.
+\newblock Materials data on sr5nb5o17 (sg:58) by materials project, 4 2016.
+
+\bibitem{QE-2017}
+P.~Giannozzi et~al.
+\newblock Advanced capabilities for materials modelling with quantum espresso.
+\newblock {\em Journal of Physics: Condensed Matter}, 29(46):465901, 2017.
+
+\bibitem{QE-2009}
+P.~Giannozzi et~al.
+\newblock Quantum espresso: a modular and open-source software project for
+  quantum simulations of materials.
+\newblock {\em Journal of Physics: Condensed Matter}, 21(39):395502 (19pp),
+  2009.
+
+\bibitem{wannier}
+A.~A. Mostofi, Jonathan~R. Yates, Giovanni Pizzi, Young-Su Lee, Ivo Souza,
+  David Vanderbilt, and Nicola Marzari.
+\newblock An updated version of wannier90: A tool for obtaining
+  maximally-localised wannier functions.
+\newblock {\em Computer Physics Communications}, 185(8):2309 -- 2310, 2014.
+
+\bibitem{kuntscher}
+C.~A. Kuntscher, S.~Gerhold, N.~N{\"u}cker, T.~R. Cummins, D.-H. Lu,
+  S.~Schuppler, C.~S. Gopinath, F.~Lichtenberg, J.~Mannhart, and K.-P. Bohnen.
+\newblock Electronic structure of layered perovskite-related $
+  \mathrm{Sr_{1-y}La_yNbO_{3.5-x}}$.
+\newblock {\em Physical Review B}, 61(3):1876--1883, Jan 2000.
+
+\end{thebibliography}

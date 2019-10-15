@@ -1,0 +1,124 @@
+%merlin.mbs aipnum4-1.bst 2010-07-25 4.21a (PWD, AO, DPC) hacked
+%Control: key (0)
+%Control: author (8) initials jnrlst
+%Control: editor formatted (1) identically to author
+%Control: production of article title (-1) disabled
+%Control: page (0) single
+%Control: year  (1) truncated
+%Control: production of eprint (0) enabled
+\begin{thebibliography}{8}%
+\makeatletter
+\providecommand \@ifxundefined [1]{%
+ \@ifx{#1\undefined}
+}%
+\providecommand \@ifnum [1]{%
+ \ifnum #1\expandafter \@firstoftwo
+ \else \expandafter \@secondoftwo
+ \fi
+}%
+\providecommand \@ifx [1]{%
+ \ifx #1\expandafter \@firstoftwo
+ \else \expandafter \@secondoftwo
+ \fi
+}%
+\providecommand \natexlab [1]{#1}%
+\providecommand \enquote  [1]{``#1''}%
+\providecommand \bibnamefont  [1]{#1}%
+\providecommand \bibfnamefont [1]{#1}%
+\providecommand \citenamefont [1]{#1}%
+\providecommand \href@noop [0]{\@secondoftwo}%
+\providecommand \href [0]{\begingroup \@sanitize@url \@href}%
+\providecommand \@href[1]{\@@startlink{#1}\@@href}%
+\providecommand \@@href[1]{\endgroup#1\@@endlink}%
+\providecommand \@sanitize@url [0]{\catcode `\$12\catcode `\&12\catcode
+  `\#12\catcode `\^12\catcode `\_12\catcode `\%12\relax}%
+\providecommand \@@startlink[1]{}%
+\providecommand \@@endlink[0]{}%
+\providecommand \url  [0]{\begingroup\@sanitize@url \@url }%
+\providecommand \@url [1]{\endgroup\@href {#1}{\urlprefix }}%
+\providecommand \urlprefix  [0]{URL }%
+\providecommand \Eprint [0]{\href }%
+\providecommand \doibase [0]{http://dx.doi.org/}%
+\providecommand \selectlanguage [0]{\@gobble}%
+\providecommand \bibinfo  [0]{\@secondoftwo}%
+\providecommand \bibfield  [0]{\@secondoftwo}%
+\providecommand \translation [1]{[#1]}%
+\providecommand \BibitemOpen [0]{}%
+\providecommand \bibitemStop [0]{}%
+\providecommand \bibitemNoStop [0]{.\EOS\space}%
+\providecommand \EOS [0]{\spacefactor3000\relax}%
+\providecommand \BibitemShut  [1]{\csname bibitem#1\endcsname}%
+\let\auto@bib@innerbib\@empty
+%</preamble>
+\bibitem [{\citenamefont {Brown}\ and\ \citenamefont {Austin}(2005)}]{bib1}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {M.~P.}\ \bibnamefont
+  {Brown}}\ and\ \bibinfo {author} {\bibfnamefont {K.}~\bibnamefont {Austin}},\
+  }\href@noop {} {\emph {\bibinfo {title} {The New Physique}}}\ (\bibinfo
+  {publisher} {Publisher Name},\ \bibinfo {address} {Publisher City},\ \bibinfo
+  {year} {2005})\ \unskip, pp.\ \bibinfo {pages} {25--30}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Brown}\ and\ \citenamefont {Austin}(2004)}]{bib2}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {M.~P.}\ \bibnamefont
+  {Brown}}\ and\ \bibinfo {author} {\bibfnamefont {K.}~\bibnamefont {Austin}},\
+  }\href@noop {} {\bibfield  {journal} {\bibinfo  {journal} {Appl. Phys.
+  Letters}\ }\textbf {\bibinfo {volume} {85}},\ \unskip\ \bibinfo {pages}
+  {2503--2504} (\bibinfo {year} {2004})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Wang}(1999)}]{bib3}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {R.~T.}\ \bibnamefont
+  {Wang}},\ }\enquote {\bibinfo {title} {Title of chapter},}\ in\ \href@noop {}
+  {\emph {\bibinfo {booktitle} {Classic Physiques}}},\ \bibinfo {editor}
+  {edited by\ \bibinfo {editor} {\bibfnamefont {R.~B.}\ \bibnamefont {Hamil}}}\
+  (\bibinfo  {publisher} {Publisher Name},\ \bibinfo {address} {Publisher
+  City},\ \bibinfo {year} {1999})\ \unskip, pp.\ \bibinfo {pages}
+  {212--213}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Smith}\ and\ \citenamefont {Jones}(2002)}]{bib4}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {C.~D.}\ \bibnamefont
+  {Smith}}\ and\ \bibinfo {author} {\bibfnamefont {E.~F.}\ \bibnamefont
+  {Jones}},\ }\enquote {\bibinfo {title} {Load-cycling in cubic press},}\ in\
+  \href@noop {} {\emph {\bibinfo {booktitle} {Shock Compression of Condensed
+  Matter-2001}}},\ \bibinfo {series and number} {\bibinfo {series} {AIP
+  Conference Proceedings}\ \ \bibinfo {number} {620}},\ \bibinfo {editor}
+  {edited by\ \bibinfo {editor} {\bibfnamefont {M.~D.}\ \bibnamefont
+  {Furnish}}}\ (\bibinfo  {publisher} {American Institute of Physics},\
+  \bibinfo {address} {Melville, NY},\ \bibinfo {year} {2002})\ \unskip, pp.\
+  \bibinfo {pages} {651--654}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Jackson}\ and\ \citenamefont {Pitman}(2004)}]{bib5}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {B.~R.}\ \bibnamefont
+  {Jackson}}\ and\ \bibinfo {author} {\bibfnamefont {T.}~\bibnamefont
+  {Pitman}},\ }\href@noop {} {}\ \bibinfo {howpublished} {{U.S. Patent No.
+  6,345,224}} (8~July \bibinfo {year} {2004} \unskip)\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Davids}(1998)}]{bib6}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {D.~L.}\ \bibnamefont
+  {Davids}},\ }\enquote {\bibinfo {title} {Recovery effects in binary aluminum
+  alloys},}\ \href@noop {} {\bibinfo {type} {{Ph.D.} thesis}},\ \bibinfo
+  {school} {Harvard University} \bibinfo {year} {1998}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Mikkelson}()}]{bib7}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {R.~C.}\ \bibnamefont
+  {Mikkelson}},\ }\href@noop {} {}\ \unskip\bibinfo {note} {(private
+  communication)}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Kuntscher}\ \emph {et~al.}(2000)\citenamefont
+  {Kuntscher}, \citenamefont {Gerhold}, \citenamefont {N{\"u}cker},
+  \citenamefont {Cummins}, \citenamefont {Lu}, \citenamefont {Schuppler},
+  \citenamefont {Gopinath}, \citenamefont {Lichtenberg}, \citenamefont
+  {Mannhart},\ and\ \citenamefont {Bohnen}}]{kun}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {C.~A.}\ \bibnamefont
+  {Kuntscher}}, \bibinfo {author} {\bibfnamefont {S.}~\bibnamefont {Gerhold}},
+  \bibinfo {author} {\bibfnamefont {N.}~\bibnamefont {N{\"u}cker}}, \bibinfo
+  {author} {\bibfnamefont {T.~R.}\ \bibnamefont {Cummins}}, \bibinfo {author}
+  {\bibfnamefont {D.-H.}\ \bibnamefont {Lu}}, \bibinfo {author} {\bibfnamefont
+  {S.}~\bibnamefont {Schuppler}}, \bibinfo {author} {\bibfnamefont {C.~S.}\
+  \bibnamefont {Gopinath}}, \bibinfo {author} {\bibfnamefont {F.}~\bibnamefont
+  {Lichtenberg}}, \bibinfo {author} {\bibfnamefont {J.}~\bibnamefont
+  {Mannhart}}, \ and\ \bibinfo {author} {\bibfnamefont {K.-P.}\ \bibnamefont
+  {Bohnen}},\ }\href {\doibase 10.1103/PhysRevB.61.1876} {\bibfield  {journal}
+  {\bibinfo  {journal} {Physical Review B}\ }\textbf {\bibinfo {volume} {61}},\
+  \unskip\ \bibinfo {pages} {1876--1883}Jan (\bibinfo {year}
+  {2000})}\BibitemShut {NoStop}%
+\end{thebibliography}%
