@@ -7,6 +7,7 @@ from functools import partial
 import time
 
 from .hamiltonian_c.hamiltonian import hamiltonian_cython
+from .hamiltonian_f.hamiltonian import mod_hamiltonian
 
 def hamiltonian(k, input_dataframe):
     """Hamiltonian Tight Binding berdasarkan single K vector.
@@ -53,6 +54,10 @@ def hamiltonian_v2(k, input_dataframe):
 def hamiltonian_v3(k, input_hamiltonian):
     return hamiltonian_cython(k, input_hamiltonian)
 
+def hamiltonian_v4(k, input_hamiltonian, num_orbitals):
+    mod_hamiltonian.mat = input_hamiltonian
+    a = mod_hamiltonian.hamiltonian_fortran(k, num_orbitals)
+    return a
 
 def multiple_hamiltonian(k_path_grid, input_hamiltonian, hamiltonian_func, num_process='all'):
     # More number of processes, more used memory !!!

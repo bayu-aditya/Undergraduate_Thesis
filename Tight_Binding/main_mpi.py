@@ -5,7 +5,9 @@ from mpi4py import MPI
 
 from src.preprocessing import extract, generate_input_hamiltonian
 from src.k_path import k_mesh_orthorombic
+
 from src.hamiltonian import hamiltonian_v3
+from src.hamiltonian import hamiltonian_v4
 
 comm = MPI.COMM_WORLD
 size = comm.Get_size()
@@ -23,21 +25,21 @@ if rank == 0:
     n = len(k_grid)
 
     num_orbitals, parameterTB = extract(
-        "/home/tcmp/sharedfolder/BAYU/Undergraduate_Thesis/Data/Sr10Nb10O34/hr_files/Sr10_Nb10_O34_5x1x8_hr.dat", 
+        "/home/bayu/Documents/Undergraduate_Thesis/Data/Sr10Nb10O34/hr_files/Sr10_Nb10_O34_5x1x8_hr.dat", 
         max_cubic_cell=[3,3,3]
         )
 
     input_hamiltonian = generate_input_hamiltonian(
         data_parameter_TB = parameterTB, 
-        filename_atomic_position = "/home/tcmp/sharedfolder/BAYU/Undergraduate_Thesis/Data/Sr10Nb10O34/atomic_position.csv",
-        filename_orbital_index="/home/tcmp/sharedfolder/BAYU/Undergraduate_Thesis/Data/Sr10Nb10O34/orbital_index.csv",
+        filename_atomic_position = "/home/bayu/Documents/Undergraduate_Thesis/Data/Sr10Nb10O34/atomic_position.csv",
+        filename_orbital_index="/home/bayu/Documents/Undergraduate_Thesis/Data/Sr10Nb10O34/orbital_index.csv",
         a = 10.86909,
         b = 5.763864449563357*10.86909,
         c = 0.703931807842342*10.86909
         )
 
     hamiltonian = np.memmap(
-        filename = "/home/tcmp/sharedfolder/BAYU/Undergraduate_Thesis/hamiltonian.npm",
+        filename = "/home/bayu/Documents/Undergraduate_Thesis/hamiltonian.npm",
         dtype = np.complex128, mode = 'w+',
         shape = (n, num_orbitals, num_orbitals)
         )
@@ -71,7 +73,7 @@ comm.Scatterv([idx, split_size, split_disp, MPI.INTEGER8], idx_local, root=0)
 print('rank ', rank, ': ', idx_local)
 #______________________________________________________________________________
 hamiltonian = np.memmap(
-    filename = "/home/tcmp/sharedfolder/BAYU/Undergraduate_Thesis/hamiltonian.npm",
+    filename = "/home/bayu/Documents/Undergraduate_Thesis/hamiltonian.npm",
     dtype = np.complex128, mode = 'r+',
     shape = (n, num_orbitals, num_orbitals)
     )
@@ -79,7 +81,8 @@ hamiltonian = np.memmap(
 num = 0
 for i in idx_local:
     start = time.time()
-    hamiltonian[i,:,:] = hamiltonian_v3(k_grid[i], input_hamiltonian)
+    # hamiltonian[i,:,:] = hamiltonian_v3(k_grid[i], input_hamiltonian)
+    hamiltonian[i,:,:] = hamiltonian_v4(k_grid[i], input_hamiltonian, num_orbitals)
     num += 1
     print("[LOG] rank", rank, ", num", num, time.time() - start, "sec.")
 
