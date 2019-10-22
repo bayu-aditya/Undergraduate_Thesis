@@ -39,9 +39,8 @@ def hamiltonian(k, input_dataframe):
     return hamiltonian
 
 
-def hamiltonian_v2(k, input_dataframe):
-    mat = input_dataframe.to_numpy()
-
+def hamiltonian_v2(k, input_hamiltonian):
+    mat = input_hamiltonian
     ham = np.zeros(shape=(len(np.unique(mat[:,3])), len(np.unique(mat[:,4]))),dtype=np.complex128)
 
     for idx in range(len(mat)):
@@ -56,8 +55,7 @@ def hamiltonian_v3(k, input_hamiltonian):
 
 def hamiltonian_v4(k, input_hamiltonian, num_orbitals):
     mod_hamiltonian.mat = input_hamiltonian
-    a = mod_hamiltonian.hamiltonian_fortran(k, num_orbitals)
-    return a
+    return mod_hamiltonian.hamiltonian_fortran(k, num_orbitals)
 
 def multiple_hamiltonian(k_path_grid, input_hamiltonian, hamiltonian_func, num_process='all'):
     # More number of processes, more used memory !!!

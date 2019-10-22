@@ -7,10 +7,13 @@ def extract(filename_hr_file, max_cubic_cell=[100,100,100]):
     # Menentukan letak baris awal pembacaan parameter
     #   output : num_row
     with open(filename_hr_file) as f:
-        data = f.readlines()
-    for num_row, row in enumerate(data):
-        if (len(row.split()) == 7):
-            break  
+        data = f.readline()
+        num_row = 0
+        while data:
+            data = f.readline()
+            num_row += 1
+            if (len(data.split()) == 7):
+                break
 
     # Pembacaan hr_file dimulai dari baris "num_row"
     num_init_row = num_row
