@@ -1,44 +1,36 @@
-
 {
-    "materials": {
-        "parameter_TB": "Data/Sr10Nb10O34/hr_files/Sr10_Nb10_O34_5x1x8_hr.dat",
-        "atomic_position": "Data/Sr10Nb10O34/atomic_position.csv",
-        "orbital_index": "Data/Sr10Nb10O34/orbital_index.csv",
+    "system": {
+        "hr_file": "/home/bayu/Documents/Undergraduate_Thesis/Data/Sr10Nb10O34/hr_files/Sr10_Nb10_O34_5x1x8_hr.dat",
+        "atomic_position": "/home/bayu/Documents/Undergraduate_Thesis/Data/Sr10Nb10O34/atomic_position.csv",
+        "orbital_index": "/home/bayu/Documents/Undergraduate_Thesis/Data/Sr10Nb10O34/orbital_index.csv"
+    },
+    "cell_parameter": {
         "a": 10.86909,
         "b": 62.64796145010459,
-        "c": 7.651098173301121
+        "c": 7.651098173301121,
+        "max_cell": [
+            3,
+            3,
+            3
+        ]
     },
-    "range_unit_cell": {
-        "max_X": 3,
-        "max_Y": 1,
-        "max_Z": 3
+    "k-points": {
+        "nk": [
+            23,
+            8,
+            17
+        ]
     },
-    "density_of_states": {
-        "hamiltonian": {
-            "nK-points" : [23, 3, 17],
-            "hamiltonian_output": "hamiltonian_dos_10x2x16_23x3x17.npy"
-        }, 
-        "generate": {
-            "frequency_range": [-50.0, 25.0],
-            "grid": 10000,
-            "buffer": 2500,
-            "dos_output": "DOS_Array.npz"
-        }
+    "DOS": {
+        "start": -50.0,
+        "stop": 25.0,
+        "num": 2,
+        "zero_plus": 0.01,
+        "step": 150
     },
-    "band_structures": {
-        "hamiltonian": {
-            "k-path": [
-                [0.0, 0.0, 0.5],
-                [0.0, 0.0, 0.0], 
-                [0.5, 0.0, 0.0], 
-                [0.0, 0.0, 0.0], 
-                [0.0, 0.5, 0.0]
-            ],
-            "size_kpath": [30,28,28,5],
-            "hamiltonian_output": "Data/Sr10Nb10O34/hamiltonian/hamiltonian_bands.npy"
-        },
-        "generate": {
-            "bands_output": "Bands_Array.npz"
-        }
-    }
+    "output": {
+        "loc": "/home/bayu/Documents/Undergraduate_Thesis/outdir",
+        "hamiltonian": "hamiltonian.npm"
+    },
+    "num_orbitals": 340
 }
