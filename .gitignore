@@ -12,5 +12,6 @@ mpi4py/
 *.o
 *.so
 
+*outdir/
 *.eps
 *.xmgr

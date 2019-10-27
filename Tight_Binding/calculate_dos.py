@@ -2,23 +2,33 @@
 import numpy as np
 import os
 import time
+import argparse
 from mpi4py import MPI
 from tools.generator import matrix_generator
+from src.variable import variable
 
-LOC_HAMILTONIAN = "/home/bayu/Documents/Undergraduate_Thesis/hamiltonian.npm"
-N_KPOINTS = 23*8*17
-NUM_ORBITALS = 346
-OUT_DIR = "/home/bayu/Documents/Undergraduate_Thesis/outdir"
-STEP = 150
-RANGE_FREQ = [-50,25]
-NUM_FREQ = 2
-ZERO_PLUS = 0.01
+parser = argparse.ArgumentParser()
+parser.add_argument("input", help="input file 'information.json'", type=str)
+args = parser.parse_args()
 
 comm = MPI.COMM_WORLD
 rank = comm.Get_rank()
 size = comm.Get_size()
 
+var = variable(comm, args.input)
+LOC_HAMILTONIAN = var.hamiltonian_dos
+N_KPOINTS = int(var.num_k)
+NUM_ORBITALS = var.num_orbitals
+OUT_DIR = var.outdir
+STEP = var.step
+RANGE_FREQ = [var.start, var.stop]
+NUM_FREQ = var.num_freq
+ZERO_PLUS = var.zero_plus
+
 if rank == 0:
+    if not os.path.exists(os.path.join(var.outdir, "temp")):
+        os.makedirs(os.path.join(var.outdir, "temp"))
+
     frequency = np.linspace(RANGE_FREQ[0], RANGE_FREQ[1], num=NUM_FREQ, dtype=np.float64)
     dos = np.zeros_like(frequency)
     pdos = np.zeros(shape=(len(frequency),NUM_ORBITALS), dtype=np.float64)
