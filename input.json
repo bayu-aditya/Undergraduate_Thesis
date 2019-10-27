@@ -4,6 +4,10 @@
         "atomic_position": "/home/bayu/Documents/Undergraduate_Thesis/Data/Sr10Nb10O34/atomic_position.csv",
         "orbital_index": "/home/bayu/Documents/Undergraduate_Thesis/Data/Sr10Nb10O34/orbital_index.csv"
     },
+    "generate_hamiltonian" : {
+        "bands" : true,
+        "dos" : true
+    },
     "cell_parameter": {
         "a": 10.86909,
         "b": 62.64796145010459,
@@ -16,9 +20,9 @@
     },
     "k-points": {
         "nk": [
-            23,
-            8,
-            17
+            1,
+            1,
+            8
         ]
     },
     "DOS": {
@@ -28,9 +32,17 @@
         "zero_plus": 0.01,
         "step": 150
     },
-    "output": {
-        "loc": "/home/bayu/Documents/Undergraduate_Thesis/outdir",
-        "hamiltonian": "hamiltonian.npm"
+    "BANDS" : {
+        "kpath" : [
+            [0.0, 0.0, 0.5],
+            [0.0, 0.0, 0.0],
+            [0.5, 0.0, 0.0],
+            [0.0, 0.0, 0.0],
+            [0.0, 0.5, 0.0]
+        ],
+        "num" : [30,28,28,5]
     },
-    "num_orbitals": 340
+    "output": {
+        "loc": "/home/bayu/Documents/Undergraduate_Thesis/outdir"
+    }
 }
