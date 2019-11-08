@@ -4,7 +4,9 @@ from PyQt5.Qt import Qt
 import numpy as np
 import pandas as pd
 import logging
+import time
 import sys
+import os
 sys.path.append('../')
 
 from matplotlib.backends.qt_compat import QtCore, QtWidgets, is_pyqt5
@@ -114,7 +116,7 @@ class Ui(QtWidgets.QTabWidget):
                 shape = (num_k_bands, num_orbitals, num_orbitals)
             )
 
-            self._eigen = np.linalg.eigvals(hamiltonian_band)
+            self._eigen = np.linalg.eigvalsh(hamiltonian_band)
             self._eigen = np.sort(self._eigen, axis=1)
             logging.info("Eigenvalues has been calculated")
 
@@ -144,6 +146,7 @@ class Ui(QtWidgets.QTabWidget):
 
 
     def check_orbitalPressed(self):
+        start = time.time()
         data = self.data
         unchecked = dict()
         root = self.tree_orbital.invisibleRootItem()
@@ -184,8 +187,9 @@ class Ui(QtWidgets.QTabWidget):
         logging.info("Hamiltonian shape : {}".format(ham_reduce.shape))
 
         logging.info("Calculating Eigenvalues .......")
-        eigen_reduce = np.linalg.eigvals(ham_reduce)
+        eigen_reduce = np.linalg.eigvalsh(ham_reduce)
         eigen_reduce = np.sort(eigen_reduce, axis=1)
+        # eigen_reduce = eigen_multiprocessing(ham_reduce)
 
         energy_max = np.float64(self.le_max_energy.text())
         energy_min = np.float64(self.le_min_energy.text())
@@ -202,7 +206,7 @@ class Ui(QtWidgets.QTabWidget):
         for i in vline:
             ax.axvline(i, color='black')
         self._canvas_band.figure.canvas.draw()        
-        logging.info("Finishing Calculate eigenvalues and show the band structures")
+        logging.info("Finishing Calculate eigenvalues and show the band structures during {} sec.".format(time.time() - start))
 
 
     def plotBandPressed(self):
