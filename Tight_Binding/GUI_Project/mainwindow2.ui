@@ -6,12 +6,12 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1117</width>
-    <height>724</height>
+    <width>1245</width>
+    <height>828</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>TabWidget</string>
+   <string>Tight Binding Tools by Bayu Aditya</string>
   </property>
   <property name="tabPosition">
    <enum>QTabWidget::North</enum>
@@ -20,9 +20,192 @@
    <enum>QTabWidget::Rounded</enum>
   </property>
   <property name="currentIndex">
-   <number>1</number>
+   <number>2</number>
   </property>
-  <widget class="QWidget" name="tab">
+  <widget class="QWidget" name="tab_input">
+   <attribute name="title">
+    <string>Input</string>
+   </attribute>
+   <widget class="QWidget" name="gridLayoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>40</y>
+      <width>771</width>
+      <height>201</height>
+     </rect>
+    </property>
+    <layout class="QGridLayout" name="gridLayout" columnstretch="3,5,1,1">
+     <property name="verticalSpacing">
+      <number>1</number>
+     </property>
+     <item row="0" column="0">
+      <widget class="QLabel" name="label_8">
+       <property name="text">
+        <string>Information (JSON)</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QLineEdit" name="le_browse_json">
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="2">
+      <widget class="QPushButton" name="pb_browse_json">
+       <property name="text">
+        <string>browse</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="2">
+      <widget class="QCheckBox" name="checkBox_2">
+       <property name="text">
+        <string>Automatic</string>
+       </property>
+       <property name="checked">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="2">
+      <widget class="QCheckBox" name="checkBox">
+       <property name="text">
+        <string>Automatic</string>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="checked">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="0">
+      <widget class="QLabel" name="label_11">
+       <property name="text">
+        <string>Orbital Index</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="3">
+      <widget class="QPushButton" name="pushButton_3">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="text">
+        <string>browse</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="0">
+      <widget class="QLabel" name="label_10">
+       <property name="text">
+        <string>Density of States</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QLineEdit" name="le_browse_hamband">
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QLabel" name="label_9">
+       <property name="text">
+        <string>Hamiltonian Band Structures</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="1">
+      <widget class="QLineEdit" name="le_browse_orbital">
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="3">
+      <widget class="QPushButton" name="pushButton_2">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="text">
+        <string>browse</string>
+       </property>
+       <property name="checkable">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="1">
+      <widget class="QLineEdit" name="le_browse_dos">
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="0">
+      <widget class="QLabel" name="label_12">
+       <property name="text">
+        <string>Atomic Position</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="1">
+      <widget class="QLineEdit" name="le_browse_atompos">
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="2">
+      <widget class="QCheckBox" name="checkBox_3">
+       <property name="text">
+        <string>Automatic</string>
+       </property>
+       <property name="checked">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="2">
+      <widget class="QCheckBox" name="checkBox_4">
+       <property name="text">
+        <string>Automatic</string>
+       </property>
+       <property name="checked">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="3">
+      <widget class="QPushButton" name="pushButton_4">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="text">
+        <string>browse</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="3">
+      <widget class="QPushButton" name="pushButton_5">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="text">
+        <string>browse</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QWidget" name="tab_dos">
    <attribute name="title">
     <string>Density of States</string>
    </attribute>
@@ -31,8 +214,8 @@
      <rect>
       <x>10</x>
       <y>10</y>
-      <width>1091</width>
-      <height>551</height>
+      <width>981</width>
+      <height>651</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="plotLayoutDos"/>
@@ -41,7 +224,7 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>570</y>
+      <y>670</y>
       <width>281</width>
       <height>121</height>
      </rect>
@@ -98,7 +281,7 @@
     <property name="geometry">
      <rect>
       <x>300</x>
-      <y>570</y>
+      <y>670</y>
       <width>331</width>
       <height>121</height>
      </rect>
@@ -233,8 +416,118 @@
      </property>
     </widget>
    </widget>
+   <widget class="QTreeWidget" name="treeWidget_dos">
+    <property name="geometry">
+     <rect>
+      <x>1000</x>
+      <y>10</y>
+      <width>231</width>
+      <height>651</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+      <italic>true</italic>
+     </font>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="animated">
+     <bool>true</bool>
+    </property>
+    <column>
+     <property name="text">
+      <string>Line(s) DOS</string>
+     </property>
+    </column>
+   </widget>
+   <widget class="QSpinBox" name="sb_num_pdos">
+    <property name="geometry">
+     <rect>
+      <x>1090</x>
+      <y>670</y>
+      <width>46</width>
+      <height>26</height>
+     </rect>
+    </property>
+    <property name="value">
+     <number>2</number>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pb_pdos">
+    <property name="geometry">
+     <rect>
+      <x>1140</x>
+      <y>670</y>
+      <width>90</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>plot PDOS</string>
+    </property>
+   </widget>
+   <widget class="QGroupBox" name="groupBox_5">
+    <property name="geometry">
+     <rect>
+      <x>640</x>
+      <y>670</y>
+      <width>281</width>
+      <height>121</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>DOS from Quantum Espresso</string>
+    </property>
+    <widget class="QPlainTextEdit" name="plainTextEdit_dosqe">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>20</y>
+       <width>261</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>8</pointsize>
+       <italic>true</italic>
+      </font>
+     </property>
+     <property name="readOnly">
+      <bool>true</bool>
+     </property>
+     <property name="plainText">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_browse_dosqe">
+     <property name="geometry">
+      <rect>
+       <x>180</x>
+       <y>90</y>
+       <width>90</width>
+       <height>28</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Browse</string>
+     </property>
+     <property name="shortcut">
+      <string>Ctrl+B</string>
+     </property>
+     <property name="autoDefault">
+      <bool>true</bool>
+     </property>
+     <property name="default">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </widget>
   </widget>
-  <widget class="QWidget" name="tab">
+  <widget class="QWidget" name="tab_bands">
    <attribute name="title">
     <string>Band Structures</string>
    </attribute>
@@ -243,8 +536,8 @@
      <rect>
       <x>10</x>
       <y>10</y>
-      <width>851</width>
-      <height>551</height>
+      <width>981</width>
+      <height>651</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="plotLayoutBand"/>
@@ -253,7 +546,7 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>570</y>
+      <y>670</y>
       <width>281</width>
       <height>121</height>
      </rect>
@@ -310,7 +603,7 @@
     <property name="geometry">
      <rect>
       <x>300</x>
-      <y>570</y>
+      <y>670</y>
       <width>181</width>
       <height>121</height>
      </rect>
@@ -371,6 +664,9 @@
      </property>
     </widget>
     <widget class="QPushButton" name="pushButton_plot_band">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
      <property name="geometry">
       <rect>
        <x>80</x>
@@ -396,11 +692,17 @@
    <widget class="QTreeWidget" name="treeWidget_orbital">
     <property name="geometry">
      <rect>
-      <x>875</x>
+      <x>1005</x>
       <y>10</y>
       <width>231</width>
-      <height>551</height>
+      <height>651</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+      <italic>true</italic>
+     </font>
     </property>
     <property name="animated">
      <bool>true</bool>
@@ -411,24 +713,100 @@
      </property>
     </column>
    </widget>
-   <widget class="QPushButton" name="pushButton_check_orbital">
+   <widget class="QLabel" name="label_7">
     <property name="geometry">
      <rect>
-      <x>1000</x>
-      <y>570</y>
-      <width>101</width>
-      <height>28</height>
+      <x>1100</x>
+      <y>770</y>
+      <width>131</width>
+      <height>20</height>
      </rect>
     </property>
     <property name="text">
-     <string>Reduce Orbital</string>
+     <string>Author : Bayu Aditya</string>
     </property>
    </widget>
+   <widget class="QGroupBox" name="groupBox_6">
+    <property name="geometry">
+     <rect>
+      <x>910</x>
+      <y>670</y>
+      <width>321</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Orbital Reduction</string>
+    </property>
+    <widget class="QPushButton" name="pushButton_check_orbital">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>210</x>
+       <y>30</y>
+       <width>101</width>
+       <height>28</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Plot</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pb_load_bands">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>30</y>
+       <width>90</width>
+       <height>28</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Load</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pb_save_bands">
+     <property name="geometry">
+      <rect>
+       <x>110</x>
+       <y>30</y>
+       <width>90</width>
+       <height>28</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Save</string>
+     </property>
+    </widget>
+   </widget>
   </widget>
-  <widget class="QWidget" name="tab_2">
+  <widget class="QWidget" name="tab_atompos">
    <attribute name="title">
-    <string>Page</string>
+    <string>Atomic Position</string>
    </attribute>
+   <widget class="QTableWidget" name="tb_atomic_position">
+    <property name="geometry">
+     <rect>
+      <x>660</x>
+      <y>20</y>
+      <width>441</width>
+      <height>391</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QWidget" name="verticalLayoutWidget_3">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>631</width>
+      <height>521</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="plotLayoutAtomicPosition"/>
+   </widget>
   </widget>
  </widget>
  <tabstops>
